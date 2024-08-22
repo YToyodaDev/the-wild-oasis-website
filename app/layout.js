@@ -1,6 +1,7 @@
 import Logo from "@/app/_components/Logo";
 import Navigation from "@/app/_components/Navigation";
 import { Josefin_Sans } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const josefin = Josefin_Sans({ subsets: ["latin"], display: "swap" });
 
@@ -26,8 +27,9 @@ export default function RootLayout({ children }) {
 
         <div className="flex-1 px-8 py-12 grid">
           <main className="max-w-7xl mx-auto w-full">
-            {" "}
-            <ReservationProvider>{children}</ReservationProvider>
+            <ReservationProvider>
+              {children} <SpeedInsights />
+            </ReservationProvider>
           </main>
         </div>
       </body>
